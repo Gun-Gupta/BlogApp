@@ -1,0 +1,88 @@
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card border-0 shadow-lg edit-blog-card">
+
+        <!-- Header -->
+        <div class="card-header text-white text-center edit-header">
+          <h2 class="fw-bold mb-0">✏️ Edit Blog</h2>
+        </div>
+
+        <!-- Form -->
+        <div class="card-body p-4 p-md-5">
+
+          <form action="/blog/edit/{{blog.id}}" method="POST">
+
+            <!-- Title -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Title</label>
+              <input
+                type="text"
+                name="title"
+                class="form-control form-control-lg"
+                value="{{blog.title}}"
+                required>
+            </div>
+
+            <!-- Slug -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                class="form-control"
+                value="{{blog.slug}}"
+                required>
+            </div>
+
+            <!-- Content -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Content</label>
+              <textarea
+                name="content"
+                rows="8"
+                class="form-control"
+                required>{{blog.content}}</textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+
+              <button type="submit" class="btn btn-success px-5">
+                ✅ Update Blog
+              </button>
+
+              <a href="/blog" class="btn btn-outline-secondary px-4">
+                ← Back to Blogs
+              </a>
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Optional UI polish -->
+<style>
+  .edit-header {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    padding: 1.75rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .edit-blog-card {
+    border-radius: 16px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+</style>

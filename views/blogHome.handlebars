@@ -1,0 +1,68 @@
+<div class="container py-5">
+
+  <!-- Page Title -->
+  <div class="text-center mb-5">
+    <h1 class="fw-bold display-6">📚 All Blogs</h1>
+    <p class="text-muted">Read, manage, and create amazing content</p>
+  </div>
+
+  {{#each blogs}}
+    <div class="card border-0 shadow-lg mb-4 blog-card">
+
+      <div class="card-body p-4">
+
+        <!-- Blog Title -->
+        <h3 class="card-title fw-bold mb-3">
+          <a href="/blog/{{this.slug}}" class="text-decoration-none text-dark blog-title">
+            {{this.title}}
+          </a>
+        </h3>
+
+        <!-- Action Buttons -->
+        <div class="d-flex flex-wrap gap-2 mt-3">
+
+          <a href="/blog/edit/{{this.id}}" class="btn btn-outline-primary btn-sm px-3">
+            ✏️ Edit
+          </a>
+
+          <form action="/blog/delete/{{this.id}}" method="POST">
+            <button
+              type="submit"
+              class="btn btn-outline-danger btn-sm px-3"
+              onclick="return confirm('Are you sure you want to delete this blog?')">
+              🗑 Delete
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  {{/each}}
+
+  <!-- Create Button -->
+  <div class="text-center mt-5">
+    <a href="/login" class="btn btn-lg btn-dark px-5 shadow">
+      ➕ Create New Blog
+    </a>
+  </div>
+
+</div>
+
+<!-- Optional custom styles (can go in <style> tag or CSS file) -->
+<style>
+  
+  .blog-card {
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  .blog-title:hover {
+    color: #0d6efd;
+  }
+</style>

@@ -1,0 +1,94 @@
+<div class="container py-5">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card border-0 shadow-lg create-blog-card">
+
+        <!-- Header -->
+        <div class="card-header text-white text-center create-header">
+          <h2 class="fw-bold mb-0">📝 Create New Blog</h2>
+        </div>
+
+        <!-- Form -->
+        <div class="card-body p-4 p-md-5">
+
+          <form action="/blog/create" method="POST">
+
+            <!-- Title -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Title</label>
+              <input
+                type="text"
+                name="title"
+                class="form-control form-control-lg"
+                placeholder="Enter blog title"
+                required>
+            </div>
+
+            <!-- Slug -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Slug</label>
+              <input
+                type="text"
+                name="slug"
+                class="form-control"
+                placeholder="e.g. my-first-blog"
+                required>
+              <div class="form-text">
+                This will be used in the blog URL
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Content</label>
+              <textarea
+                name="content"
+                rows="9"
+                class="form-control"
+                placeholder="Write your blog content here..."
+                required></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+
+              <button type="submit" class="btn btn-primary px-5">
+                🚀 Publish Blog
+              </button>
+
+              <a href="/blog" class="btn btn-outline-secondary px-4">
+                ← Back to Blogs
+              </a>
+
+              <a href="/logout" class="btn btn-danger">Logout</a>
+
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Optional styling for extra polish -->
+<style>
+  .create-header {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    padding: 1.75rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .create-blog-card {
+    border-radius: 16px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+</style>
